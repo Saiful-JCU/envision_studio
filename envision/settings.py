@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-+=)_&_mfq4n9*++gdwaky$xwgvo%^%q0ive&j%-ds52sz4cekx'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = false
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -120,6 +120,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 STATICFILES_DIRS = [
     BASE_DIR / 'static'
@@ -144,8 +145,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 JAZZMIN_SETTINGS = {
-    "site_header" : "Envision BD",
+    "site_header" : "EnvisionStudio BD",
     "site_brand" : "Believer",
     "site_logo" : "images/logo.jpeg",
-    'copyright' : 'envision.com'
+    'copyright' : 'envisionstudio.cloud'
 }
