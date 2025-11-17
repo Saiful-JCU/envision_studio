@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+
+    <!---------------------------------- blog section ------------------------>
+    <section class="section blog-section" aria-labelledby="blog-section-title">
+
+        <span class="section-tag">Our Blog</span>
+        <h2 id="blog-section-title" class="blog-section-title">Graphic Design & Photo Editing Insights</h2>
+        <p class="">
+          Explore the latest tips, tutorials, and industry updates on graphic design, clipping paths, background removal, and professional photo editing.
+        </p>
+    
+        <div class="blog-cards-view" style="" >
+          {% for blog in blog %}
+              <!-- Blog Card 1 -->
+              <article class="blog-card" itemscope itemtype="https://schema.org/BlogPosting" >
+                <div class="blog-image">
+                  <img src="{{ blog.banner.url}}" 
+                      alt="Five Professional Tips for Better Photo Editing and Retouching"
+                      loading="lazy" width="400" height="250" itemprop="image">     <div class="overlay" aria-hidden="true">
+                    <a href="{% url 'blogDetailsView' blog.slug %}"><i class="fas fa-link"></i></a>
+                  </div>
+                </div>
+                <div class="blog-content">
+                  <p class="blog-meta">
+                    <time datetime="2019-04-19" itemprop="datePublished">{{ blog.created_at }}</time> | 
+                    <span itemprop="author">{{ blog.author }}</span>
+                  </p>
+                  <h3 class="blog-title" itemprop="headline">{{ blog.title}}</h3>
+                  {% if blog.slug %} 
+                    <a href="{% url 'blogDetailsView' blog.slug %}" class="read-more" itemprop="url">Read More →</a>            
+                  {% endif %}  
+                </div>
+              </article>
+          {% endfor %}
+
+      
+          <!-- Blog Card 2 -->
+          <article class="blog-card" itemscope itemtype="https://schema.org/BlogPosting">
+            <div class="blog-image">
+              <img src="//i.ibb.co/6zvjpmt/bg.jpg" 
+                  alt="Clipping Path Secrets Every eCommerce Brand Should Know"
+                  loading="lazy" width="400" height="250"
+                  itemprop="image">
+              <div class="overlay" aria-hidden="true">
+                <i class="fas fa-link"></i>
+              </div>
+            </div>
+            <div class="blog-content">
+              <p class="blog-meta">
+                <time datetime="2019-04-19" itemprop="datePublished">April 19, 2019</time> | 
+                <span itemprop="author">Jack</span>
+              </p>
+              <h3 class="blog-title" itemprop="headline">Clipping Path Secrets Every eCommerce Brand Should Know</h3>
+              <a href="/blog/clipping-path-secrets" class="read-more" itemprop="url">Read More →</a>
+            </div>
+          </article>
+      
+          <!-- Blog Card 3 -->
+          <article class="blog-card" itemscope itemtype="https://schema.org/BlogPosting">
+            <div class="blog-image">
+              <img src="//i.ibb.co/6zvjpmt/bg.jpg"  alt="Background Removal Techniques for Professional Product Photography"
+                  loading="lazy" width="400" height="250"
+                  itemprop="image">
+              <div class="overlay" aria-hidden="true">
+                <i class="fas fa-link"></i>
+              </div>
+            </div>
+            <div class="blog-content">
+              <p class="blog-meta">
+                <time datetime="2019-04-19" itemprop="datePublished">April 19, 2019</time> | 
+                <span itemprop="author">Jack</span>
+              </p>
+              <h3 class="blog-title" itemprop="headline">Background Removal Techniques for Professional Product Photography</h3>
+              <a href="/blog/background-removal-techniques" class="read-more" itemprop="url">Read More →</a>
+            </div>
+          </article>
+
+        </div>
+      
+      
+    </section>
+    <!---------------------------------- blog section end------------------------>
+ 
+     
+
+{% endblock %}
+
