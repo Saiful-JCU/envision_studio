@@ -206,7 +206,7 @@
             </div>
             {% for s in service %}
                 <div class="service-box">
-                  <span>{{ s.title }}</span>
+                  <span>{{ s.ServiceCategory }}</span>
                   {% if s.slug %}
                 
                     <a href="{% url 'service_detail' s.slug %} " style='color:white;'><i class="fa-solid fa-arrow-right service_icon"></i></a>

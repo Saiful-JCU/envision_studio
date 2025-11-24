@@ -14,6 +14,12 @@ class Message(models.Model):
     email = models.EmailField()
     message = models.TextField()
 
+class ServiceCategory(models.Model):
+    img = models.FileField(upload_to="serviceCategory/", null=True, blank=True)
+    ServiceCategory = models.CharField(max_length = 100, unique = True )
+
+    def __str__(self):
+        return self.ServiceCategory
 
 class JobData(models.Model):
     email = models.EmailField()
@@ -38,16 +44,24 @@ class BeforAfterImg(models.Model):
     before_img_alt_text = models.CharField(null=True, blank=True, max_length=650)
     after_img = models.FileField(upload_to = "before_after_img/")
     after_img_alt_text = models.CharField(null=True, blank=True, max_length=450)
-    img_category = models.CharField(max_length = 50, blank=True, null = True)
+    service_category = models.ForeignKey(ServiceCategory, on_delete=models.CASCADE, blank=True, null = True)
 
 
 class ServiceDetail(models.Model):
     title = models.CharField(max_length=50)
     slug = models.SlugField(unique=True, blank=True)
     service_img = models.FileField(null=True, blank=True, upload_to="service_img/")
+    ServiceCategory = models.ForeignKey(ServiceCategory, on_delete=models.CASCADE, blank=True, null = True)
+
     img_alt_text = models.CharField(null=True, blank=True,max_length=450)
     description = models.CharField(max_length=250)
-    about_em = models.CharField(max_length=50)
+    about_service = models.CharField(max_length=800, null=True, blank=True)
+    service_features1 = models.CharField(null=True, blank=True,max_length=450)
+    service_features2 = models.CharField(null=True, blank=True,max_length=455)
+    service_features3 = models.CharField(null=True, blank=True,max_length=455)
+    service_features4 = models.CharField(null=True, blank=True,max_length=450)
+    service_features5 = models.CharField(null=True, blank=True,max_length=450)
+
     
     working_process_h2 = models.CharField(max_length=250)
     step_1_p = models.CharField(max_length=250)

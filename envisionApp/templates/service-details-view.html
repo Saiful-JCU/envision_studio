@@ -23,21 +23,36 @@
     <div class="about-text">
       <h2>Professional {{ service.title }} Service</h2>
       <p>
-        At <strong>Envision Studio</strong>, we specialize in high-quality <em>{{ service.about_em }}</em> services that make your product images stand out.
-        Our experienced editors use the Pen Tool in Adobe Photoshop to ensure clean, smooth,
-        and pixel-perfect cutouts suitable for eCommerce, catalogs, and advertisements.
+        At <strong>Envision Studio</strong>, {{ service.about_service }}
       </p>
       <ul class="service-features">
-        <li><i class="fa-solid fa-check"></i> 100% Hand-drawn clipping paths</li>
-        <li><i class="fa-solid fa-check"></i> Clean, sharp, and natural edges</li>
-        <li><i class="fa-solid fa-check"></i> Multi-path & color correction available</li>
-        <li><i class="fa-solid fa-check"></i> Fast turnaround with bulk discounts</li>
+        {% if service.service_features1 %}
+          <li><i class="fa-solid fa-check"></i>{{ service.service_features1}}</li>
+        
+        {% endif %}
+        {% if service.service_features2 %}
+        <li><i class="fa-solid fa-check"></i> {{ service.service_features2}}</li>
+        
+        {% endif %}
+        {% if service.service_features3 %}
+        <li><i class="fa-solid fa-check"></i> {{ service.service_features3}}</li>
+        
+        {% endif %}
+        {% if service.service_features4 %}
+        <li><i class="fa-solid fa-check"></i> {{ service.service_features4}}</li>
+        
+        {% endif %}
+        {% if service.service_features5 %}
+        <li><i class="fa-solid fa-check"></i> {{ service.service_features5}}</li>
+        
+        {% endif %}       
+        
       </ul>
     </div>
     <div class="about-image">
       
       {% for i in image %}
-        {% if i.img_category == service.title %}
+        {% if i.service_category == service.ServiceCategory %}
           <div class="card">
               <div class="img-compare" style="--pos:50%;">
               <img class="base-img" src="{{ i.before_img.url }}" alt="">
@@ -68,7 +83,7 @@
 <!-- Work Process Section -->
 <section class="section work-process" aria-labelledby="work-process-heading">
   <h5 class="tag">Our Work Process</h5>
-  <h2 id="work-process-heading">How We Deliver Perfect {{ service.working_process_h2 }} Results</h2>
+  <h2 id="work-process-heading">{{ service.working_process_h2 }}</h2>
   <p>Our workflow ensures accuracy, quality, and fast delivery for every image you send.</p>
 
   <div class="process-cards">
@@ -130,7 +145,7 @@
     <div class="pricing-card">
       <div class="card-header">
         <h3>STANDARD PLAN</h3>
-        <div class="price">$0.69<span>/image</span></div>
+        <div class="price">${{ service.standard_plan }}<span>/image</span></div>
       </div>
       <div class="card-body">
         <p>For medium complexity images like models or jewelry.</p>
@@ -148,7 +163,7 @@
     <div class="pricing-card">
       <div class="card-header">
         <h3>PREMIUM PLAN</h3>
-        <div class="price">$0.99<span>/image</span></div>
+        <div class="price">${{ service.premium_plan}}<span>/image</span></div>
       </div>
       <div class="card-body">
         <p>For advanced eCommerce or catalog editing projects.</p>

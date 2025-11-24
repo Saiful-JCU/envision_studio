@@ -2,16 +2,17 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
-from .models import Message, Staff, JobData, BeforAfterImg, ServiceDetail, BlogDetailsView
+from .models import Message, Staff, JobData, BeforAfterImg, ServiceDetail, BlogDetailsView, ServiceCategory
 
 # Create your views here.
 def home(request):
     img = BeforAfterImg.objects.all()
     service = ServiceDetail.objects.all()
+    servieCategory = ServiceCategory.objects.all()
     blog = BlogDetailsView.objects.all()
     staff = Staff.objects.all()
 
-    return render(request, 'index.html', { 'ba_img': img , 'service': service, 'blog': blog, 'staff': staff})
+    return render(request, 'index.html', { 'ba_img': img , 'service': service, 'blog': blog, 'staff': staff, 'servieCategory':servieCategory })
 
 
 def get_message(request):
