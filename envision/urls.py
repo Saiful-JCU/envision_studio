@@ -20,7 +20,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('superuser/admin/', admin.site.urls),
     path("", include('envisionApp.urls'))
 ]
 if settings.DEBUG:  # ✅ only for development

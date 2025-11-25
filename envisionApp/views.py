@@ -19,6 +19,7 @@ def get_message(request):
     if request.method == "POST":
         name = request.POST.get("name")
         email = request.POST.get("email")
+        subject = request.POST.get("subject")
         message = request.POST.get("message")
 
 
@@ -26,6 +27,7 @@ def get_message(request):
         Message.objects.create(
             name = name,
             email = email,
+            subject = subject,
             message = message
         )
 
@@ -36,7 +38,7 @@ def get_message(request):
 
     else:
         print("Your message request has not been submitted!")
-        return render(request, "index.html")
+        return render(request, "contact.html")
 
 
 def getJobData(request):
@@ -90,7 +92,17 @@ def blogDetailsView(request, slug):
 
 
 def aboutpage(request):
-    return render(request, 'about.html')
+    staff = Staff.objects.all()
+    return render(request, 'about.html', {'staff':staff})
+
+def contactPage(request):
+    return render(request, 'contact.html')
+
+def servicePage(request):
+    # service = ServiceCategory.objects.all()
+    service = ServiceDetail.objects.all()
+
+    return render(request, 'service.html', {'service':service})
 
 
 
