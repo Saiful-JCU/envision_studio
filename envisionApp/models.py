@@ -17,10 +17,10 @@ class Message(models.Model):
 
 class ServiceCategory(models.Model):
     img = models.FileField(upload_to="serviceCategory/", null=True, blank=True)
-    ServiceCategory = models.CharField(max_length = 100, unique = True )
+    servicecategory_name = models.CharField(max_length = 100, unique = True )
 
     def __str__(self):
-        return self.ServiceCategory
+        return self.servicecategory_name
 
 class JobData(models.Model):
     email = models.EmailField()

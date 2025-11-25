@@ -28,7 +28,7 @@ class JobDataAdmin(admin.ModelAdmin):
 
 @admin.register(ServiceCategory)
 class ServiceCategory(admin.ModelAdmin):
-    list_display = ('img', 'ServiceCategory')
+    list_display = ('img', 'servicecategory_name')
 
 
 

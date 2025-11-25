@@ -52,7 +52,7 @@
     <div class="about-image">
       
       {% for i in image %}
-        {% if i.service_category == service.ServiceCategory %}
+        {% if i.service_category == service.servicecategory_name %}
           <div class="card">
               <div class="img-compare" style="--pos:50%;">
               <img class="base-img" src="{{ i.before_img.url }}" alt="">
