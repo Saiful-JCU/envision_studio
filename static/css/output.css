@@ -719,10 +719,6 @@ video {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.flex-wrap {
-  flex-wrap: wrap;
-}
-
 .items-start {
   align-items: flex-start;
 }
