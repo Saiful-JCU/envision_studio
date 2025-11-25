@@ -31,242 +31,116 @@
   </script>
 
 
-  <!-- ✅ Fonts & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <!-- ABOUT HERO SECTION -->
+  <section  style="background-image: url('{% static 'images/laptop-bg.jpg' %}');"
+  class="w-full bg-cover bg-no-repeat bg-center py-20 text-white">
 
-  <!-- ✅ Styles -->
-  <style>
-    
-    .about_hero {
-      background: linear-gradient(to right, #9333ea, #4f46e5);
-      color: #fff;
-      text-align: center;
-      padding: 5rem 2rem;
-    }
-
-    .about_hero h2 {
-      font-size: 2.8rem;
-      margin-bottom: 0.5rem;
-      font-weight: 700;
-    }
-
-    .about_hero p {
-      font-size: 1.1rem;
-      opacity: 0.9;
-      max-width: 650px;
-      margin: 0 auto;
-      color: white;
-    }
-
-    .about_container {
-      max-width: 1100px;
-      margin: 3rem auto;
-      padding: 0 1rem;
-    }
-
-    .about_section {
-      margin-bottom: 4rem;
-    }
-
-    .about_section h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: #111;
-      font-weight: 700;
-    }
-
-    .about_section p {
-      color: #444;
-      font-size: 1.05rem;
-      margin-bottom: 1rem;
-    }
-
-    .mission, .story {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-      flex-wrap: wrap;
-    }
-
-    .mission img, .story img {
-      flex: 1 1 400px;
-      border-radius: 12px;
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
-
-    .mission-text, .story-text {
-      flex: 1 1 500px;
-    }
-
-    .values {
-      background: #fff;
-      padding: 3rem 2rem;
-      border-radius: 16px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-      text-align: center;
-    }
-
-    .values h2 {
-      margin-bottom: 1rem;
-    }
-
-    .values-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .value-card {
-      background: #f9fafb;
-      padding: 1.5rem;
-      border-radius: 12px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .value-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 15px rgba(0,0,0,0.08);
-    }
-
-    .value-card i {
-      color: #4f46e5;
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    .value-card h3 {
-      margin-bottom: 0.5rem;
-      color: #111;
-      font-weight: 600;
-    }
-
-    .team {
-      text-align: center;
-    }
-
-    .team-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .team-member {
-      background: #fff;
-      border-radius: 12px;
-      padding: 1.5rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-      transition: transform 0.3s ease;
-    }
-
-    .team-member:hover {
-      transform: translateY(-5px);
-    }
-
-    .team-member img {
-      width: 100%;
-      border-radius: 50%;
-      margin-bottom: 1rem;
-    }
-
-    .team-member h3 {
-      margin-bottom: 0.3rem;
-      color: #111;
-    }
-
-    .team-member p {
-      color: #666;
-      font-size: 0.95rem;
-    }
+  <div class="max-w-6xl mx-auto px-4 text-center">
+      <h1 class="text-4xl font-bold mb-4">About Us</h1>
+      <p class="text-lg max-w-2xl mx-auto text-white">
+          We are a professional photo retouching and post-production team committed
+          to delivering premium quality editing with fast turnaround.
+      </p>
+  </div>
+</section>
 
 
+<!-- ABOUT CONTENT SECTION -->
+<section class="py-16 bg-gray-100">
+  <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
 
-    @media (max-width: 768px) {
-      .hero h2 { font-size: 2.2rem; }
-      .mission, .story { flex-direction: column; }
-    }
-  </style>
-
-  <section class="about_hero">
-    <h2>About EnvisionStudio</h2>
-    <p>We bring imagination to life through creative design, innovation, and storytelling.</p>
-  </section>
-
-  <main class="about_container">
-    <section class="about_section story">
-      <img src="/static/images/envision-story.jpg" alt="Designers collaborating at EnvisionStudio office">
-      <div class="story-text">
-        <h2>Our Story</h2>
-        <p>Founded in 2021, EnvisionStudio started as a small design collective with a passion for visual storytelling. Over the years, we’ve grown into a full-fledged creative agency serving global clients with design, branding, and digital solutions.</p>
-        <p>Our mission remains rooted in one idea — to help brands communicate better through meaningful visuals and strategic creativity.</p>
+      <!-- LEFT IMAGE -->
+      <div>
+          <img src="{% static 'images/laptop-bg-2.jpg' %}"                alt="About Us Image"                class="rounded-lg shadow-lg">
       </div>
-    </section>
 
-    <section class="about_section mission">
-      <div class="mission-text">
-        <h2>Our Mission</h2>
-        <p>At EnvisionStudio, we aim to empower businesses and creators with design solutions that blend aesthetics, functionality, and innovation. From brand identity to digital experiences — we envision ideas and make them reality.</p>
-      </div>
-      <img src="/static/images/envision-mission.jpg" alt="Creative brainstorming at EnvisionStudio">
-    </section>
+      <!-- RIGHT TEXT -->
+      <div>
+          <h2 class="text-3xl font-semibold text-[#0E3E4C] mb-4">Who We Are</h2>
+          <p class="text-gray-700 leading-relaxed mb-6">
+              We provide high-end image retouching, clipping paths, color correction,
+              eCommerce product editing, and creative post-production services.
+          </p>
 
-    <section class="about_section values">
-      <h2>Our Core Values</h2>
-      <div class="values-grid">
-        <div class="value-card">
-          <i class="fas fa-lightbulb"></i>
-          <h3>Creativity</h3>
-          <p>We think beyond boundaries to craft visuals that inspire and connect.</p>
-        </div>
-        <div class="value-card">
-          <i class="fas fa-users"></i>
-          <h3>Collaboration</h3>
-          <p>We believe the best work comes from shared ideas and teamwork.</p>
-        </div>
-        <div class="value-card">
-          <i class="fas fa-check-circle"></i>
-          <h3>Excellence</h3>
-          <p>We deliver high-quality results with precision and professionalism.</p>
-        </div>
-        <div class="value-card">
-          <i class="fas fa-globe"></i>
-          <h3>Innovation</h3>
-          <p>We embrace new technologies to stay ahead in the creative world.</p>
-        </div>
-      </div>
-    </section>
+          <p class="text-gray-700 leading-relaxed mb-6">
+              Our experienced team focuses on precision, quality, and consistency
+              — ensuring every image meets a professional standard.
+          </p>
 
-    <section class="about_section team">
-      <h2>Meet the Creative Minds</h2>
-      <p>Our team of designers, strategists, and creators work together to turn your vision into a masterpiece.</p>
-      <div class="team-grid">
-        <div class="team-member">
-          <img src="/static/images/team1.jpg" alt="Alex Chen - Creative Director at EnvisionStudio">
-          <h3>Alex Chen</h3>
-          <p>Creative Director</p>
-        </div>
-        <div class="team-member">
-          <img src="/static/images/team2.jpg" alt="Mia Zhang - UI/UX Designer at EnvisionStudio">
-          <h3>Mia Zhang</h3>
-          <p>UI/UX Designer</p>
-        </div>
-        <div class="team-member">
-          <img src="/static/images/team3.jpg" alt="Liam Wong - Brand Strategist at EnvisionStudio">
-          <h3>Liam Wong</h3>
-          <p>Brand Strategist</p>
-        </div>
-        <div class="team-member">
-          <img src="/static/images/team4.jpg" alt="Sophie Lin - Visual Artist at EnvisionStudio">
-          <h3>Sophie Lin</h3>
-          <p>Visual Artist</p>
-        </div>
+          <a href="/contact" 
+             class="inline-block bg-[#0E3E4C] text-white px-6 py-3 rounded-md hover:bg-opacity-90 transition">
+             Contact Us
+          </a>
       </div>
-    </section>
-  </main>
+
+  </div>
+</section>
+
+
+<!-- WHY CHOOSE US SECTION -->
+<section class="py-20">
+  <div class="max-w-6xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-semibold text-[#0E3E4C] mb-6">Why Choose Our Service?</h2>
+      <p class="max-w-3xl mx-auto text-gray-600 mb-12">
+          We combine experience, dedication, and accuracy to deliver top-quality
+          results for photographers, studios, agencies, and eCommerce brands.
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-8">
+
+          <div class="p-6 bg-white shadow rounded-lg">
+              <h3 class="text-xl font-bold text-[#0E3E4C] mb-2">High-End Quality</h3>
+              <p class="text-gray-600">Every image is edited carefully with advanced techniques.</p>
+          </div>
+
+          <div class="p-6 bg-white shadow rounded-lg">
+              <h3 class="text-xl font-bold text-[#0E3E4C] mb-2">Fast Delivery</h3>
+              <p class="text-gray-600">Quick turnaround without compromising quality.</p>
+          </div>
+
+          <div class="p-6 bg-white shadow rounded-lg">
+              <h3 class="text-xl font-bold text-[#0E3E4C] mb-2">Affordable Pricing</h3>
+              <p class="text-gray-600">Best value for freelancers, studios, and large businesses.</p>
+          </div>
+
+      </div>
+  </div>
+</section>
+
+
+<!-- TEAM SECTION -->
+<section class="py-20 bg-gray-100">
+  <div class="max-w-6xl mx-auto px-4">
+
+      <h2 class="text-3xl font-semibold text-[#0E3E4C] text-center mb-12">Meet Our Team</h2>
+
+      <div class="grid md:grid-cols-3 gap-10">
+
+        {% for staff in staff %}
+          <div class="bg-white shadow rounded-lg p-6 text-center">
+              <img src="{{ staff.image.url }}" class="w-32 h-32 mx-auto rounded-full mb-4">
+              <h3 class="text-xl font-semibold">{{ staff.name }}</h3>
+              <p class="text-gray-600">{{ staff.department }}</p>
+          </div>
+        
+        {% endfor %}
+      </div>
+
+  </div>
+</section>
+
+
+<!-- FOOTER CTA -->
+<section class="py-20 bg-[#0E3E4C] text-white text-center">
+  <h2 class="text-3xl font-semibold mb-4">Ready to Improve Your Photos?</h2>
+  <p class="max-w-2xl mx-auto mb-6">
+      Get in touch with us for high-quality retouching with fast delivery.
+  </p>
+  <a href="/contact" 
+     class="bg-white text-[#0E3E4C] px-8 py-3 rounded-md font-semibold hover:bg-opacity-90">
+     Contact Us Now
+  </a>
+</section>
+
 
   {% endblock content %}

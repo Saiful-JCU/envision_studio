@@ -10,7 +10,8 @@ from shortuuid.django_fields import ShortUUIDField
     
 
 class Message(models.Model):
-    name = models.CharField(max_length = 100)
+    name = models.CharField(max_length = 200)
+    subject = models.CharField(max_length = 500, null=True, blank=True)
     email = models.EmailField()
     message = models.TextField()
 

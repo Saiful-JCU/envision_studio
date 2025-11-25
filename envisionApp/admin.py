@@ -3,7 +3,7 @@ from .models import Message, JobData, Pricing, Staff, BeforAfterImg, ServiceDeta
 
 @admin.register(Message)
 class MessageAdmin(admin.ModelAdmin):
-    list_display = ('name', 'email', 'shorter_message')
+    list_display = ('name', 'email', 'subject', 'shorter_message')
     search_fields = ('name', 'email')
     list_filter = ['email']
     ordering = ['-id']

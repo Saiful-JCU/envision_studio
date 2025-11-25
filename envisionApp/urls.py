@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import home, get_message, getJobData, service_detail, blog_cards, blogDetailsView, aboutpage
+from .views import home, get_message, getJobData, service_detail, blog_cards, blogDetailsView, aboutpage, contactPage
 
 
 urlpatterns = [
@@ -10,5 +10,6 @@ urlpatterns = [
     path("blog_cards/",blog_cards, name="blog_cards"),
     path("blogDetailsView/<slug:slug>/",blogDetailsView, name="blogDetailsView"),
     path("aboutpage/",aboutpage, name="aboutpage"),
+    path("contactPage/",contactPage, name="contactPage"),
 
 ]
