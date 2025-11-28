@@ -15,7 +15,7 @@ class Message(models.Model):
     email = models.EmailField()
     message = models.TextField()
 
-class ServiceCategory(models.Model):
+class ServiceCat(models.Model):
     img = models.FileField(upload_to="serviceCategory/", null=True, blank=True)
     servicecategory_name = models.CharField(max_length = 100, unique = True )
 
@@ -45,14 +45,14 @@ class BeforAfterImg(models.Model):
     before_img_alt_text = models.CharField(null=True, blank=True, max_length=650)
     after_img = models.FileField(upload_to = "before_after_img/")
     after_img_alt_text = models.CharField(null=True, blank=True, max_length=450)
-    service_category = models.ForeignKey(ServiceCategory, on_delete=models.CASCADE, blank=True, null = True)
+    service_category = models.ForeignKey(ServiceCat, on_delete=models.CASCADE, blank=True, null = True)
 
 
 class ServiceDetail(models.Model):
     title = models.CharField(max_length=50)
     slug = models.SlugField(unique=True, blank=True)
     service_img = models.FileField(null=True, blank=True, upload_to="service_img/")
-    ServiceCategory = models.ForeignKey(ServiceCategory, on_delete=models.CASCADE, blank=True, null = True)
+    ServiceCategory = models.ForeignKey(ServiceCat, on_delete=models.CASCADE, blank=True, null = True)
 
     img_alt_text = models.CharField(null=True, blank=True,max_length=450)
     description = models.CharField(max_length=250)
@@ -133,6 +133,7 @@ class Staff(models.Model):
 
     def __str__(self):
         return self.name
+
 
 
 
