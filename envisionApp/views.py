@@ -2,13 +2,13 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
-from .models import Message, Staff, JobData, BeforAfterImg, ServiceDetail, BlogDetailsView, ServiceCategory
+from .models import Message, Staff, JobData, BeforAfterImg, ServiceDetail, BlogDetailsView, ServiceCat
 
 # Create your views here.
 def home(request):
     img = BeforAfterImg.objects.all()
     service = ServiceDetail.objects.all()
-    servieCategory = ServiceCategory.objects.all()
+    servieCategory = ServiceCat.objects.all()
     blog = BlogDetailsView.objects.all()
     staff = Staff.objects.all()
 
@@ -103,6 +103,7 @@ def servicePage(request):
     service = ServiceDetail.objects.all()
 
     return render(request, 'service.html', {'service':service})
+
 
 
 
