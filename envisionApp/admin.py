@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Message, JobData, Pricing, Staff, BeforAfterImg, ServiceDetail, BlogDetailsView, ServiceCategory
+from .models import Message, JobData, Pricing, Staff, BeforAfterImg, ServiceDetail, BlogDetailsView, ServiceCat
 
 @admin.register(Message)
 class MessageAdmin(admin.ModelAdmin):
@@ -26,8 +26,8 @@ class JobDataAdmin(admin.ModelAdmin):
         return (obj.message[:20] + "....") if len(obj.message) > 20 else obj.message
 
 
-@admin.register(ServiceCategory)
-class ServiceCategory(admin.ModelAdmin):
+@admin.register(ServiceCat)
+class ServiceCat(admin.ModelAdmin):
     list_display = ('img', 'servicecategory_name')
 
 
@@ -64,5 +64,6 @@ class BlogDetailsViewAdmin(admin.ModelAdmin):
 class StaffAdmin(admin.ModelAdmin):
     list_display = ('image', 'name', 'department')
     search_fields = ('name',)
+
 
 
